@@ -7,7 +7,7 @@
 
     {
       "name": "Products",
-      "url": "/Products",
+      "url": "/productspage",
       "hasChildren": true,
       "children": [
         {
