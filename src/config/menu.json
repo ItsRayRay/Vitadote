@@ -4,46 +4,51 @@
       "name": "Home",
       "url": "/"
     },
+
     {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Pages",
-      "url": "",
+      "name": "Products",
+      "url": "/Products",
       "hasChildren": true,
       "children": [
         {
-          "name": "Contact",
-          "url": "/contact"
+          "name": "1X Shilajit Resin 20g",
+          "url": "/productpage"
+        }, {
+          "name": "2X Shilajit Resin 20g",
+          "url": "/productpage"
         },
         {
-          "name": "Blog",
-          "url": "/blog"
+          "name": "3X Shilajit Resin 20g",
+          "url": "/productpage"
+        }
+      
+      
+      ]
+    },
+    {
+      "name": "Blog",
+      "url": "/blog",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Body",
+          "url": "/categories/body"
         },
         {
-          "name": "Authors",
-          "url": "/authors"
+          "name": "Mind",
+          "url": "/categories/mind"
         },
         {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Search",
-          "url": "/search"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
+          "name": "Health",
+          "url": "/categories/health"
         }
       ]
+    },  {
+      "name": "Contact",
+      "url": "/contact"
     }
   ],
+  
   "footer": [
     {
       "name": "Elements",
