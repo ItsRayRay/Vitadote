@@ -9,9 +9,13 @@
   <div class="dropdown-container">
     <label for="language">Select a language:</label>
     <select id="language">
-      <option value="en">English</option>
-      <option value="es">Spanish</option>
-      <option value="fr">French</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="pt">🇧🇷 Português</option>
+        <option value="ro">🇷🇴 Română</option>
       <!-- Add more languages here as needed -->
     </select>
   </div>
@@ -71,14 +75,28 @@ document.addEventListener("DOMContentLoaded", function() {
   function handleChange() {
     const selectedLanguage = languageDropdown.value;
     selectedLanguageDisplay.textContent = selectedLanguage;
+    localStorage.setItem("selectedLanguage", selectedLanguage); // Save selected language to localStorage
     // You can perform any additional actions here when the user selects a language
   }
 
   // Add event listener to the dropdown to trigger the handleChange function
   languageDropdown.addEventListener("change", handleChange);
 
-  // Initialize the selected language display
-  handleChange();
+  // Initialize the selected language display from localStorage if available
+  const savedLanguage = localStorage.getItem("selectedLanguage");
+  if (savedLanguage) {
+    languageDropdown.value = savedLanguage;
+    selectedLanguageDisplay.textContent = savedLanguage;
+  }
+
+  // Listen for changes in other tabs/windows and update the component accordingly
+  window.addEventListener("storage", function(event) {
+    if (event.key === "selectedLanguage") {
+      const updatedLanguage = event.newValue;
+      languageDropdown.value = updatedLanguage;
+      selectedLanguageDisplay.textContent = updatedLanguage;
+    }
+  });
 });
 </script>
 
