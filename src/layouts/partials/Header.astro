@@ -4,6 +4,7 @@ import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import { IoSearch } from "react-icons/io5/index.js";
+import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
 
 export interface ChildNavigationLink {
   name: string;
@@ -25,9 +26,12 @@ const { pathname } = Astro.url;
 <header class={`header z-30 ${settings.sticky_header && "sticky top-0"}`}>
   <nav class="navbar container">
     <!-- logo -->
+
     <div class="order-0">
       <Logo />
+      
     </div>
+    <LanguageSwitcher />
     <!-- navbar toggler -->
     <input id="nav-toggle" type="checkbox" class="hidden" />
     <label
@@ -50,6 +54,7 @@ const { pathname } = Astro.url;
       </span>
     </label>
     <!-- /navbar toggler -->
+    
     <ul
       id="nav-menu"
       class="navbar-nav order-3 hidden w-full pb-6 lg:order-1 lg:flex lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"
@@ -74,6 +79,7 @@ const { pathname } = Astro.url;
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </span>
+                
                 <ul class="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
                   {menu.children?.map((child) => (
                     <li  class="nav-dropdown-item">
@@ -144,5 +150,6 @@ const { pathname } = Astro.url;
         )
       }
     </div>
+    
   </nav>
 </header>

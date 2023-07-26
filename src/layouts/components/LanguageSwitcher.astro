@@ -1,0 +1,84 @@
+---
+
+---
+
+
+
+
+<body>
+  <div class="dropdown-container">
+    <label for="language">Select a language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <!-- Add more languages here as needed -->
+    </select>
+  </div>
+  <p>Selected language: <span id="selectedLanguage"></span></p>
+</body>
+
+
+<style>
+
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: #333;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
+  display: none;
+}
+
+/* Show the selected language display when a language is selected */
+select:focus + p {
+  display: block;
+}
+
+/* Styling for the selected language display */
+#selectedLanguage {
+  font-weight: bold;
+  color: #007bff;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const languageDropdown = document.getElementById("language");
+  const selectedLanguageDisplay = document.getElementById("selectedLanguage");
+
+  // Function to update the selected language when the user makes a selection
+  function handleChange() {
+    const selectedLanguage = languageDropdown.value;
+    selectedLanguageDisplay.textContent = selectedLanguage;
+    // You can perform any additional actions here when the user selects a language
+  }
+
+  // Add event listener to the dropdown to trigger the handleChange function
+  languageDropdown.addEventListener("change", handleChange);
+
+  // Initialize the selected language display
+  handleChange();
+});
+</script>
+
