@@ -19,6 +19,7 @@
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/tailwind": "^4.0.0",
+    "@lloydjatkinson/astro-snipcart": "^0.2.0",
     "animate.css": "^4.1.1",
     "astro": "^2.9.1",
     "astro-auto-import": "^0.3.0",
